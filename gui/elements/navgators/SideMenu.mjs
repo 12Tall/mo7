@@ -55,9 +55,7 @@ export default class SideMenu extends CustomElement {
         ele.removeAttribute("activated");
         if (ele.dataset.index == index) {
           ele.setAttribute("activated", true);
-        }
-        console.log(ele, index);
-        
+        }        
       });
   }
 }

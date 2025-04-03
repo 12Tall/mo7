@@ -1,7 +1,7 @@
 import * as path from "path";
 import { fileURLToPath } from "url";
 import { app, BrowserWindow, Menu, ipcMain, Tray } from "electron";
-import { OllamaTranslationHandler } from "./ipc/ollama-handler.mjs";
+import { getModelList, OllamaTranslationHandler } from "./ipc/ollama.mjs";
 
 const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
 const __dirname = path.dirname(__filename); // get the name of the directory
@@ -118,6 +118,7 @@ export class Application {
     });
 
     this.ipcMain.handle("ollama-translator", OllamaTranslationHandler);
+    this.ipcMain.handle("ollama-model-list", getModelList);
   }
 
   run() {

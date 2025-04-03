@@ -1,6 +1,6 @@
-import { LitElement, css, html } from '../../Lit.js';
+import { CustomElement, css, html } from '../../CustomElement.mjs';
 
-export default class Todo extends LitElement {
+export default class Todo extends CustomElement {
   createRenderRoot() {
     return this
   }
