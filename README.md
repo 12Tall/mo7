@@ -39,6 +39,13 @@ npm run dist
 ```  
 
 ## 其他资源  
-1. 自定义组件参考：[https://www.creative-tim.com/twcomponents](https://www.creative-tim.com/twcomponents/components/dropdowns)
+1. 自定义组件参考：[https://www.creative-tim.com/twcomponents](https://www.creative-tim.com/twcomponents/components/dropdowns)  
+
+### OllamaJS  
+
+```bash
+# Node 版本的Chroma 不支持内存数据库，所以需要通过pip 安装然后启动服务  
+chroma run  --path /path
+```
 
 This project was created using `bun init` in bun v1.2.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
