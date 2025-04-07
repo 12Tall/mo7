@@ -29,8 +29,8 @@ if (reload_data) {
     const text = await fs.readFile('sample.txt', 'utf-8');
     // 按循环切片
     const splitter = new RecursiveCharacterTextSplitter({
-        chunkSize: 200,
-        chunkOverlap: 50,
+        chunkSize: 1000,
+        chunkOverlap: 500,
     });
     const chunks = await splitter.splitText(text);
 
@@ -50,20 +50,22 @@ const llm = new Ollama({
     host: config.ollama.base_url
 })
 
-let question = '月儿是谁，与主角什么关系，他们是怎么认识的，最后结果又如何'
+let question = ' 李楚的身世如何？'
 
 const results = await collection.query({
     queryTexts: question, // Chroma will embed this for you
     nResults: 10, // how many results to return
 });
 
+// 
 let template = `
 清除所有记忆。
-请根据以下内容：  
+请根据以下内容： 
 ${results.documents.join('\n\n')}
-回答用户的问题。
+
+总结并回答用户的问题。
 `
-console.log(template);
+// console.log(template);
 
 const resp = await llm.chat({
     model: 'llama3.3',
@@ -73,5 +75,6 @@ const resp = await llm.chat({
     ],
     stream: false
 })
+
 
 console.log(resp);

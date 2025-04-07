@@ -1,6 +1,7 @@
 # Based on https://raw.githubusercontent.com/github/gitignore/main/Node.gitignore
 app.exe
 main.css
+sample.txt
 app.config.json
 gui/lulu
 db

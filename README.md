@@ -20,12 +20,7 @@ npm install
 ### 开发调试
 
 ```bash
-# 首先要启动dev:css 并保持运行
-bun run dev:css  
-# 或
-npm run dev:css
-
-# 然后启动dev
+# 启动dev
 bun run dev
 # 或
 npm run dev  

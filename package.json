@@ -6,7 +6,7 @@
   "scripts": {
     "dist": "electron-builder",
     "dev:css": "bunx @tailwindcss/cli -i ./gui/tw.css -o ./gui/index.css --watch",
-    "dev": "electron ."
+    "dev": "concurrently \"npm run dev:css\" \"electron .\""
   },
   "build": {
     "appId": "io.github.12tall",
@@ -34,7 +34,10 @@
     "@webviewjs/webview": "^0.1.3",
     "chromadb": "^2.2.0",
     "chromadb-default-embed": "^2.14.0",
+    "colors": "^1.4.0",
+    "concurrently": "^9.1.2",
     "langchain": "^0.3.20",
+    "node-ssh": "^13.2.1",
     "ollama": "^0.5.14",
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.5"
